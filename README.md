@@ -55,3 +55,6 @@ ggplot(datasocialconflictidn, aes(x = Years, y = Affected)) +
 
 ```
 ![Indonesia Conflict Social](./datavisual/dataaffectedkills.png)
+
+### Death Toll of Social Conflict in Indonesia 
+The graph above shows the number of first fatalities from 1999 to 2001 the highest number of fatalities in the East Timor and Maluku conflicts, showing a range of 2500 victims in this period. Then from 2004 - 2005 there was a significant increase in the Aceh conflict with the number of victims above 500. After 2005, the graph shows a decrease in the number of victims of the conflict during this period. Social conflict in Indonesia is low, and the number of fatalities is very low due to social conditions.
