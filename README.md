@@ -54,3 +54,4 @@ ggplot(datasocialconflictidn, aes(x = Years, y = Affected)) +
   theme(plot.title = element_text(face = "bold"))
 
 ```
+![Indonesia Conflict Social](./datavisual/dataaffectedkills.png)
