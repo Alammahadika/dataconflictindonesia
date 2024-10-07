@@ -61,3 +61,4 @@ The graph above shows the number of first fatalities from 1999 to 2001 the highe
 
 ## Indonesia: National Violence Monitoring System 2014 
 This section tries to analyze the database of the 2014 National Violence Monitoring System, I will make innovations in data analysis, collecting databases on information on acts of violence between individuals or groups that have psychological impacts. The total observation data collected amounted to 28046 data case and 100 variable.
+
