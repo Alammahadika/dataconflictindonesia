@@ -178,10 +178,50 @@ ggplot(datasnpk2014, aes(tanggal_kejadian, y = actor_s1_tp)) +
 ![Indonesia Conflict Social](./datavisual/datagraphsnpk2014.png)
 
 
-## Interpretation Affiliation Involved Social Conflict in Indonesia 2014
+### Interpretation Affiliation Involved Social Conflict in Indonesia 2014
 
 Social conflicts that occur, affiliation with the government and certain institutions show a lot of distribution, affiliated actors always carry out incidents during the period. Then Local NGOs (blue) show very dominant around Y number 9, therefore Local NGOs often carry out social conflicts. The community and Militia have several distribution points, the last religious institution, political parties also carry out several incidents of social conflict.
 This visual graphic analysis helps show the roles involved in several affiliations as actors of social conflict in Indonesia. Such as Local NGOs and communities that are very involved in the conflict. And Political Parties or Religious Institutions carry out several specific incidents.
 From the distribution points, you can identify having actor affiliations that are more often involved.
 
 
+## Data Death Toll Social Conflict Indonesia in 2014
+### Read Data Base
+
+```r{}
+data base did manipulation in sub Affiates Involved in Conflict and Violance in Indonesia 2014 
+
+library(dplyr)
+filtered_dataspnk2024 <- datasnpk2014 %>%
+  filter(kil_total != 0) # filter data for point 0 in variable kill_total
+
+print(filtered_dataspnk2024$jenis_kek)
+   [1] 2 2 2 2 1 2 4 2 2 2 1 1 2 2 2 2 1 2 4 3 2 2 2 2 3 1 2 3 3 2 2 2 1 2 2 2 1 3
+  [39] 2 2 2 3 2 2 2 2 3 1 2 2 2 2 3 3 1 2 1 2 2 2 2 2 2 2 4 2 2 2 1 3 1 2 2 2 2 2
+  [77] 3 4 1 2 3 2 2 2 1 1 3 3 2 1 3 2 2 1 1 2 2 1 2 2 4 2 3 2 2 1 2 1 2 2 2 2 2 2
+ [115] 2 2 3 2 1 2 2 2 1 2 2 3 2 2 2 2 2 2 1 2 2 2 2 3 2 2 2 3 3 3 4 2 2 1 1 2 1 2
+ [153] 2 3 2 3 4 2 3 1 2 2 2 3 1 1 2 3 2 2 2 4 3 2 3 2 1 2 3 2 4 1 2 2 2 2 1 2 2 2
+ [191] 1 2 2 2 2 1 1 2 2 2 2 2 2 3 4 1 2 2 4 2 2 2 2 2 2 2 2 1 2 1 2 1 3 2 2 2 2 1
+ [229] 2 2 2 2 1 2 2 4 2 2 2 2 1 2 2 2 2 2 1 2 3 1 2 1 2 2 2 2 2 2 2 2 3 1 2 2 3 2
+ [267] 2 2 2 2 2 2 1 2 1 3 1 1 2 2 2 4 3 2 1 1 1 2 2 3 2 2 2 1 3 3 4 2 2 1 2 1 2 2
+ [305] 1 2 2 2 2 1 2 2 2 2 2 1 3 2 2 3 3 2 3 2 2 1 2 2 1 2 2 2 1 2 2 2 2 1 4 2 2 2
+ [343] 1 3 2 2 1 2 2 3 2 2 2 2 2 2 1 1 1 1 2 2 2 1 4 4 2 3 1 2 2 2 2 2 2 2 1 2 3 2
+ [381] 2 2 4 2 2 2 3 2 3 2 2 2 2 2 2 2 2 2 2 2 1 3 2 3 2 2 2 2 2 2 2 4 3 2 2 2 2 2
+ [419] 2 2 2 2 3 2 1 2 3 3 2 3 1 1 3 2 2 3 2 1 4 1 2 2 2 1 2 2 2 2 2 2 2 2 2 1 2 3
+ [457] 2 2 2 2 2 2 2 1 1 1 2 2 1 1 2 2 2 2 1 2 2 2 2 2 2 2 3 3 1 2 3 3 2 4 2 2 1 2
+ [495] 2 2 2 2 2 2 3 2 2 2 4 3 2 3 2 1 2 1 2 1 2 2 2 2 2 2 2 3 3 2 3 2 2 1 2 3 2 2
+ [533] 3 3 1 2 2 2 2 1 3 2 2 2 4 2 2 4 3 3 2 2 2 2 2 1 2 2 2 2 3 2 2 3 1 2 2 2 1 2
+ [571] 2 2 2 2 1 3 1 2 2 2 3 2 4 2 3 2 2 2 1 2 1 2 2 2 2 2 4 2 2 2 2 2 2 2 2 2 2 2
+ [609] 3 1 2 2 2 1 1 3 2 2 2 1 2 2 2 2 1 2 2 2 2 2 2 2 2 4 4 4 2 2 2 2 4 3 2 2 2 1
+ [647] 1 2 2 1 2 2 2 2 1 2 2 2 2 2 2 4 2 2 2 1 2 2 2 3 3 1 1 2 2 1 2 2 2 2 2 2 2 2
+ [685] 2 2 3 4 4 4 4 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 4 2 4 4 4 2 2 2 2
+ [723] 2 2 2 1 2 2 2 2 2 2 2 1 2 2 2 3 2 2 2 2 2 1 2 2 2 2 2 1 2 3 2 3 2 2 2 1 2 2
+ [761] 3 2 4 3 1 1 1 2 3 2 2 1 3 2 2 2 1 2 2 2 1 2 2 3 2 2 4 1 3 1 4 2 1 2 1 4 1 2
+ [799] 2 2 1 1 2 2 2 2 1 2 1 2 1 2 2 2 2 2 2 2 2 2 2 1 2 1 4 1 2 2 2 4 3 2 1 2 4 2
+ [837] 1 1 1 4 2 2 2 2 1 2 1 2 2 2 2 2 2 3 2 2 2 3 2 2 2 2 2 3 2 3 2 2 2 2 2 2 3 2
+ [875] 2 3 2 1 2 2 2 3 2 2 2 2 2 2 2 3 2 1 2 2 2 2 2 2 3 2 2 2 2 2 3 2 2 2 2 1 2 1
+ [913] 2 3 3 2 2 1 1 1 1 2 2 2 3 2 1 2 3 3 2 3 2 2 3 2 2 1 1 2 1 2 2 2 2 4 2 2 2 2
+ [951] 4 2 2 4 2 2 3 3 1 1 2 2 3 2 3 2 2 2 1 4 2 2 2 2 4 3 2 2 2 2 3 1 3 4 2 2 2 2
+ [989] 2 2 4 2 2 2 4 3 1 3 2 3
+ [ reached getOption("max.print") -- omitted 1783 entries ]
+```
