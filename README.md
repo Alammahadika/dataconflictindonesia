@@ -241,3 +241,5 @@ ggplot(filtered_dataspnk2024, aes(tanggal_kejadian, y = kil_total)) +
 ```
 
 ![Indonesia Conflict Social](./datavisual/datadeathsocialconflict2014.png)
+
+### Death Toll Social Conflict Indonesia During in 2014 
