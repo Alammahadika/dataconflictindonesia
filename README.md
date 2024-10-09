@@ -225,3 +225,17 @@ print(filtered_dataspnk2024$jenis_kek)
  [989] 2 2 4 2 2 2 4 3 1 3 2 3
  [ reached getOption("max.print") -- omitted 1783 entries ]
 ```
+### Result Analysis and Graph for Data Death Toll Social Conflict Indonesia in 2014
+
+```r{}
+ggplot(filtered_dataspnk2024, aes(tanggal_kejadian, y = kil_total)) +
+  geom_line(color = "black") +
+  geom_smooth(method = "lm", formula = y~log(x)) +
+  labs(x = "Date", y = "Total",
+       subtitle = "Source: Government of Indonesia & The World Bank") +
+  ggtitle("Total Death Toll Social Conflict Indonesia in 2014") +
+  scale_x_date(date_breaks = "1 years", date_labels = "%Y") +
+  theme(axis.text = element_blank()) +
+  scale_y_continuous(breaks = seq(1, 19, by = 1)) +
+  theme_bw() 
+```
