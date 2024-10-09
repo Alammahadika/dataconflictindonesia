@@ -239,3 +239,5 @@ ggplot(filtered_dataspnk2024, aes(tanggal_kejadian, y = kil_total)) +
   scale_y_continuous(breaks = seq(1, 19, by = 1)) +
   theme_bw() 
 ```
+
+![Indonesia Conflict Social](./datavisual/datadeathsocialconflict2014.png)
