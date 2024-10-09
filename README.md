@@ -119,4 +119,58 @@ library(readxl)
 datasnpk2014 <- read_excel("~/Desktop/Data Github/dataspnk2014.xlsx") #import data in environment R
 datasnpk2014$tanggal_kejadian <- as.Date(datasnpk2014$tanggal_kejadian, format = "%d/%m/%Y") # adjustment variable date to format R
 
+print(datasnpk2014) # view data
 
+ A tibble: 28,046 × 100
+   area  tanggal_kejadian tahun bulan quarter idkejadian kodebpsprop provinsi     
+   <chr> <date>           <dbl> <dbl>   <dbl> <chr>            <dbl> <chr>        
+ 1 ACEH  2014-01-01        2014     1       1 11AE876             11 Nanggro Aceh…
+ 2 ACEH  2014-01-01        2014     1       1 11AE878             11 Nanggro Aceh…
+ 3 ACEH  2014-01-01        2014     1       1 11AE880             11 Nanggro Aceh…
+ 4 ACEH  2014-01-01        2014     1       1 11AE882             11 Nanggro Aceh…
+ 5 ACEH  2014-01-01        2014     1       1 11AE884             11 Nanggro Aceh…
+ 6 ACEH  2014-01-02        2014     1       1 11AE886             11 Nanggro Aceh…
+ 7 ACEH  2014-01-02        2014     1       1 11AE888             11 Nanggro Aceh…
+ 8 ACEH  2014-01-07        2014     1       1 11AE890             11 Nanggro Aceh…
+ 9 ACEH  2014-01-07        2014     1       1 11AE892             11 Nanggro Aceh…
+10 ACEH  2014-01-02        2014     1       1 11AE894             11 Nanggro Aceh…
+ℹ 28,036 more rows
+ℹ 92 more variables: kodebpskab <dbl>, kabupaten <chr>, kodebpskec1 <dbl>,
+   kecamatan1 <chr>, kodebpskec2 <dbl>, kecamatan2 <chr>, desa1 <chr>,
+   desa2 <chr>, desa3 <chr>, actor_s1_tp <dbl>, actor_s1_tp_o <chr>,
+   actor_s1_tot <dbl>, actor_s2_tp <dbl>, actor_s2_tp_o <chr>,
+   actor_s2_tot <dbl>, int1 <dbl>, int2 <dbl>, int1_res <dbl>, int2_res <dbl>,
+   int1_o <lgl>, int2_o <lgl>, int1_res_o <lgl>, int2_res_o <lgl>, …
+ℹ Use `print(n = ...)` to see more rows
+````
+
+### Affiates Involved in Conflict and Violance in Indonesia 2014 
+```r{}
+library(ggplot2)
+library(lubridate)
+library(gridExtra)
+
+ggplot(datasnpk2014, aes(tanggal_kejadian, y = actor_s1_tp)) +
+  geom_jitter(aes(color = factor(actor_s1_tp))) +
+  ggtitle("Affiliates Involved in Conflict and Violence in Indonesia 2014") +
+  labs(x = "Date", y = "Actor Affiliation", color = "Actor Affiliations 2014",
+       subtitle = "Source: Government of Indonesia & The World Bank") +
+  scale_x_date(date_breaks = "1 years", date_labels = "%Y") +
+  scale_y_continuous(breaks = seq(1, 19, by = 1)) +
+  theme(axis.text = element_blank()) +
+  theme_bw() +
+  scale_color_manual(values = c(
+    "brown4", "aquamarine4", "azure4", "coral3", 
+    "cornsilk4", "darkslategray", "deeppink4", "royalblue3", 
+    "firebrick4","green4", "indianred4", "maroon4", 
+    "steelblue4", "pink4", "blue2", "red4", 
+    "tan4", "slateblue3", "tomato"), 
+    labels = c(
+      "Unclear", "Others", "Militia", "Society", 
+      "Affiliation with Government", "Selected Institutions", 
+      "NGOs International", "NGOs Local", "Private Sector", 
+      "Political Party", "Religion Institutions", "Labour", 
+      "Mass Group", "Army", "Police", "Police Brimob", 
+      "Separatism", "Student", "Security"
+    ))
+````
