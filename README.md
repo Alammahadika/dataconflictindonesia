@@ -294,5 +294,27 @@ print(deatheachprovincemarkdown)
 |West Papua                     |    28|
 |Papua                          |   151|
 
+## Result Number of Victims Province in 2014
 
+```r{}
 
+library(ggplot2)
+library(dplyr)
+
+deatheachprovince %>%
+  mutate(Province = str_remove(Province, "-.*$")) %>%
+  ggplot(aes(y = reorder(Province, Total), x = Total)) +
+  geom_segment(aes(x = 0, xend = Total, y = reorder(Province, Total),
+                   yend = reorder(Province, Total)), color = "black") +
+  geom_point(size = 4, color = "red", fill = "darkred", shape = 21) +
+  geom_text(aes(label = Total),
+            nudge_x = 10, hjust = -0.3, vjust = 0.5, size = 3.5, color = "black") +
+  labs(title = "Number of Victims Province in 2014",
+       subtitle = "Source: Government of Indonesia & The World Bank",
+       y = "Province",
+       x = "Victims") +
+  theme_classic() +
+  theme(plot.title = element_text(face = "bold"),
+        axis.title.x = element_text(angle = 90, hjust = 1))
+
+```
