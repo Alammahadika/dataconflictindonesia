@@ -318,3 +318,4 @@ deatheachprovince %>%
         axis.title.x = element_text(angle = 90, hjust = 1))
 
 ```
+![Social Conflict Indonesia](datavisual/datanumberofvictimprovince.png)
