@@ -244,3 +244,55 @@ ggplot(filtered_dataspnk2024, aes(tanggal_kejadian, y = kil_total)) +
 
 ### Death Toll Social Conflict Indonesia During in 2014 
 Time representation of variable X from early 2014 to late 2014, each vertical line graph in social conflict and variable Y shows the number of fatalities of each conflict incident. On the blue line of `geom_smooth` aims to show the range of fatalities due to the impact of social conflict mostly point 1, with slight fluctuations. Overall, this visualization shows a relatively spread out pattern, with several peaks of significant fatalities. The blue line shows that the average number of fatalities per social conflict incident in Indonesia in 2014 remained relatively low, at around 1 victim per incident.
+
+## Death Toll in Each Province
+### Read Data Base
+```r{}
+library(readxl) 
+deatheachprovince <- read_excel("~/Desktop/Data Github/deatheachprovince.xlsx") # manipulation data from datasnpk2014.xlsx 
+View(deatheachprovince)
+
+library(knitr)
+deatheachprovincemarkdown <-kable(deatheachprovince, format = "markdown")
+print(deatheachprovincemarkdown)
+
+
+```
+
+|Province                       | Total|
+|:------------------------------|-----:|
+|Nanggro Aceh Darussalam        |    46|
+|West Sumatera                  |   280|
+|Riau                           |    85|
+|Jambi                          |    51|
+|South Sumatera                 |   302|
+|Bengkulu                       |    30|
+|Lampung                        |    94|
+|Bangka Belitung Islan          |    23|
+|Riau Island                    |    55|
+|Jakarta                        |   155|
+|West Jawa                      |   327|
+|Central Java                   |   139|
+|Special Regional of Yogyakarta |    36|
+|East Java                      |   304|
+|Banten                         |    70|
+|Bali                           |    33|
+|Nusa Tenggara Barat            |    60|
+|Nusa Tenggara Timur            |    58|
+|West Kalimantan                |    48|
+|Central Kalimantan             |    58|
+|South Kalimantan               |    85|
+|East & North Kalimantan        |    48|
+|North Sulawesi                 |   103|
+|Central Sulawesi               |    41|
+|South Sulawesi                 |   156|
+|Southeast Sulawesi             |    30|
+|Gorontalo                      |    13|
+|West Sulawesi                  |     3|
+|Maluku                         |    42|
+|North Maluku                   |    20|
+|West Papua                     |    28|
+|Papua                          |   151|
+
+
+
