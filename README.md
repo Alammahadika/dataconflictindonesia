@@ -243,3 +243,4 @@ ggplot(filtered_dataspnk2024, aes(tanggal_kejadian, y = kil_total)) +
 ![Indonesia Conflict Social](./datavisual/datadeathsocialconflict2014.png)
 
 ### Death Toll Social Conflict Indonesia During in 2014 
+Time representation of variable X from early 2014 to late 2014, each vertical line graph in social conflict and variable Y shows the number of fatalities of each conflict incident. On the blue line of `geom_smooth` aims to show the range of fatalities due to the impact of social conflict mostly point 1, with slight fluctuations. Overall, this visualization shows a relatively spread out pattern, with several peaks of significant fatalities. The blue line shows that the average number of fatalities per social conflict incident in Indonesia in 2014 remained relatively low, at around 1 victim per incident.
