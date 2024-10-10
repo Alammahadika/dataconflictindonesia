@@ -294,7 +294,7 @@ print(deatheachprovincemarkdown)
 |West Papua                     |    28|
 |Papua                          |   151|
 
-## Result Number of Victims Province in 2014
+### Result Number of Victims Province in 2014
 
 ```r{}
 
@@ -319,3 +319,6 @@ deatheachprovince %>%
 
 ```
 ![Social Conflict Indonesia](datavisual/datanumberofvictimprovince.png)
+
+### Provinces With The Highest Death Toll
+This visualization shows that there is significant variation in the number of victims of social conflict in Indonesia in 2014, with provinces in Java and Sumatra at the top.West Java had the highest number of victims related to social conflict in Indonesia in 2014, with 327 victims. This shows that social conflict in this province is more significant than other provinces.Followed by East Java with 304 victims, and South Sumatra and West Sumatra which each had 302 and 280 victims.
