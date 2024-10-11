@@ -300,6 +300,7 @@ print(deatheachprovincemarkdown)
 
 library(ggplot2)
 library(dplyr)
+library(stringr)
 
 deatheachprovince %>%
   mutate(Province = str_remove(Province, "-.*$")) %>%
