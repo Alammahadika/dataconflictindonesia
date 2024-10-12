@@ -1,5 +1,5 @@
 # SOCIAL CONFLICT'S IN INDONESIA 
-From R-Studio, this project tries to do a new innovation analysis of social conflict in Indonesia, collecting conflict data from [The Humanitarian Data Exchange](https://data.humdata.org/dataset/ucdp-data-for-indonesia), and this project also explains a little about social conflict in Indonesia by region. I hope this data becomes an open source for peoples.
+From R-Studio, this project tries to do a new innovation analysis of social conflict in Indonesia, collecting conflict data from [The Humanitarian Data Exchange](https://data.humdata.org/dataset/ucdp-data-for-indonesia) and [Data World Bank](https://microdata.worldbank.org/index.php/catalog/2626/data-dictionary/F1?file_name=DATA%20SNPK%202014_JRI%2030%2011%202015), and this project also explains a little about social conflict in Indonesia by region. I hope this data becomes an open source for peoples.
 
 ## Affected Kills Social Conflict in Indonesia 1989-2023
 ### Read Data Base & Manipulation Data 
