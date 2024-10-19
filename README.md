@@ -144,7 +144,7 @@ print(datasnpk2014) # view data
 ℹ Use `print(n = ...)` to see more rows
 ````
 
-### Affiates Involved in Conflict and Violance in Indonesia 2014 
+### Affiates Involved in Conflict and Violance in Indonesia 2014 (WILL REVISION VISUAL !)
 ```r{}
 library(ggplot2)
 library(lubridate)
