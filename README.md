@@ -108,6 +108,19 @@ This section only [analyzes variables](https://microdata.worldbank.org/index.php
 
 ### Data Bese & Data Manipulation  
 ```r{}
+library(haven)
+datasnpk <- read_sav("/Users/mymac/Desktop/Data Github/datasnpk2015.sav")
+
+library(writexl) # import to 
+write_xlsx(datasnpk, "datasnpk2014.xlsx")
+getwd()
+
+library(readxl)
+datasnpk2014 <- read_excel("~/Desktop/Data Github/datasnpk2014.xlsx")
+datasnpk2014$tanggal_kejadian <- as.Date(datasnpk2014$tanggal_kejadian, format = "%d/%m/%Y")
+
+print(datasnpk2014) # view data
+
 # import data set & subset data from spnk2014
 library(readxl)
 totalactors <- read_excel("~/Desktop/Data Github/totalactors.xlsx")
@@ -132,8 +145,6 @@ View(totalactors)
 # (17) Separatism                  : 38
 # (18) Student                     : 1559
 # (19) Security                    : 13
-
-
 
 ```
 ### Affiates Involved in Conflict and Violance in Indonesia 2014 
