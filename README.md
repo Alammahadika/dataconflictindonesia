@@ -295,7 +295,7 @@ print(deatheachprovincemarkdown)
 |Papua                          |   151|
 
 ### Result Number of Victims Province in 2014
-
+ 
 ```r{}
 
 library(ggplot2)
