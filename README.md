@@ -109,7 +109,6 @@ This section only [analyzes variables](https://microdata.worldbank.org/index.php
 ### Data Bese & Data Manipulation  
 ```r{}
 # import data set & subset data from spnk2014
-# data from 
 library(readxl)
 totalactors <- read_excel("~/Desktop/Data Github/totalactors.xlsx")
 View(totalactors) 
