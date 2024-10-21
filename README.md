@@ -137,35 +137,27 @@ View(totalactors)
 
 
 ```
-### Affiates Involved in Conflict and Violance in Indonesia 2014 (WILL REVISION VISUAL !)
+### Affiates Involved in Conflict and Violance in Indonesia 2014 
 ```r{}
-library(ggplot2)
-library(lubridate)
-library(gridExtra)
 
-ggplot(datasnpk2014, aes(tanggal_kejadian, y = actor_s1_tp)) +
-  geom_jitter(aes(color = factor(actor_s1_tp))) +
-  ggtitle("Affiliates Involved in Conflict and Violence in Indonesia 2014") +
-  labs(x = "Date", y = "Actor Affiliation", color = "Actor Affiliations 2014",
-       subtitle = "Source: Government of Indonesia & The World Bank") +
-  scale_x_date(date_breaks = "1 years", date_labels = "%Y") +
-  scale_y_continuous(breaks = seq(1, 19, by = 1)) +
-  theme(axis.text = element_blank()) +
-  theme_bw() +
-  scale_color_manual(values = c(
-    "brown4", "aquamarine4", "azure4", "coral3", 
-    "cornsilk4", "darkslategray", "deeppink4", "royalblue3", 
-    "firebrick4","green4", "indianred4", "maroon4", 
-    "steelblue4", "pink4", "blue2", "red4", 
-    "tan4", "slateblue3", "tomato"), 
-    labels = c(
-      "Unclear", "Others", "Militia", "Society", 
-      "Affiliation with Government", "Selected Institutions", 
-      "NGOs International", "NGOs Local", "Private Sector", 
-      "Political Party", "Religion Institutions", "Labour", 
-      "Mass Group", "Army", "Police", "Police Brimob", 
-      "Separatism", "Student", "Security"
-    ))
+library(treemap)
+library(treemapify)
+library(ggplot2)
+library(viridis)
+
+
+ggplot(totalactors, aes(area = Total, fill = Actors, label = Actors)) +
+  geom_treemap() +
+  geom_treemap_text(colour = "yellow3", place = "centre", grow = FALSE, size = 15) +
+  scale_fill_viridis_d(option = "magma") +
+  labs(title = "Affiliates Involved in Conflict and Violence in Indonesia 2014") +
+  theme(legend.background = "none",
+        plot.background = element_rect(fill = "black"),
+        panel.background = element_rect(fill = "black"),
+        plot.title = element_text(color = "white")) +
+  theme(plot.title = element_text(face = "bold")) +
+  theme_classic()
+
 ````
 
 ![Indonesia Conflict Social](./datavisual/treemapsanalysisconflict.png)
