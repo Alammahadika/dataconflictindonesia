@@ -177,7 +177,7 @@ ggplot(totalactors, aes(area = Total, fill = Actors, label = Actors)) +
 The interpretation tree map is very simple, we can now make a conclusion, having two dominant actors, the first such as “Community”, “Police”, and “Private Sector” which shows the dominance of conflict and violence in the analysis data. Because they are in a larger box area than the other actors. The second smaller actor such as “Affiliation with government” and “Political Party” in less area, they show relatively smaller to larger involvement.
 
 
-## Data Death Toll Social Conflict Indonesia in 2014
+## Data Death Toll Social Conflict Indonesia in 2014 (REVISION OR OPTIONAL)
 ### Read Data Base
 
 ```r{}
