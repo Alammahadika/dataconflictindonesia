@@ -287,6 +287,9 @@ totalmonthdeath %>%
   theme(plot.title = element_text(face = "bold"))
 
 ```
+![Social Conflict Indonesia](datavisual/totaldeathpermonth.png)
+### Death Victim People Per Months
+The graph shows the fluctuation of the death toll from social conflicts in Indonesia during 2014. The death toll started to decline in the early years, then increased in the middle years, and stabilized in the latter years. The period from mid-April to August was particularly deadly, perhaps due to the escalation of conflict in some areas or the story needs to be further investigated.
 
 ## Death Toll in Each Province
 ### Read Data Base
