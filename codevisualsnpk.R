@@ -84,8 +84,37 @@ ggplot(filtered_dataspnk2024, aes(tanggal_kejadian, y = kil_total)) +
   scale_y_continuous(breaks = seq(1, 19, by = 1)) +
   theme_bw() 
 
+# Analysis death victim people for month 
+# graph analysis with geom_smooth
+
+library(readxl)
+totalmonthdeath <- read_excel("totalmonthdeath.xlsx") # data set from datasnpnk2014
+print(totalmonthdeath)
 
 
+totalmonthdeath$Month <- factor(totalmonthdeath$Month, 
+                                levels = c("January", "February", "March",
+                                           "April", "May", "June", "July", 
+                                           "August", "September", "October", 
+                                           "November", "December"))
+
+library(ggplot2)
+library(dplyr)
+
+totalmonthdeath %>%
+  tail(12) %>%
+  ggplot(aes(x = Month, y = Total, group = 1)) +
+  geom_line(aes(x = Month, y = Total), color = "black", size = 0.1) +
+  geom_point(shape = 20, color = "darkblue", size = 3) +
+  theme_bw() +
+  geom_smooth(method = "loess", span = 1, se = FALSE) +
+  labs(title = "Total Death Toll Social Conflict Indonesia in 2014 Per Month",
+       subtitle = "Source: Government of Indonesia & The World Bank", 
+       y = "Total",
+       x = "Month") +
+  scale_y_continuous(breaks = seq(min(totalmonthdeath$Total),max(totalmonthdeath$Total),
+                                  by = 10)) +
+  theme(plot.title = element_text(face = "bold"))
 
 # Number of Victims Province in 2014
 library(readxl)
