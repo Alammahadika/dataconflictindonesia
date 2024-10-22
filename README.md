@@ -3,7 +3,7 @@ From R-Studio, this project tries to do a new innovation analysis of social conf
 
 ## Affected Kills Social Conflict in Indonesia 1989-2023
 ### Read Data Base & Manipulation Data 
-```r{}
+```r
 dataconflictindonesia <-read.table("/Users/mymac/Desktop/Data Github/data_conflict", sep = ",", header = FALSE)
 colnames(dataconflictindonesia) <-c("Years", "Province", "Affected")
 View(dataconflictindonesia)
@@ -68,7 +68,7 @@ print(datasocialconflictidnmarkdown)
 
 ### Death Toll Social Conflict in Indonesia 1989-2023
 
-```r{}
+```r
 ggplot(datasocialconflictidn, aes(x = Years, y = Affected)) +
   geom_line(size = 1, alpha = 0.8, color = "black") +
   geom_point(size = 1) +
@@ -107,7 +107,7 @@ This section tries to analyze the database of the 2014 National Violence Monitor
 This section only [analyzes variables](https://microdata.worldbank.org/index.php/catalog/2626/data-dictionary/F1?file_name=DATA%20SNPK%202014_JRI%2030%2011%202015) Affiliation involved in conflict and violence & Number of fatalities.
 
 ### Data Bese & Data Manipulation  
-```r{}
+```r
 library(haven)
 datasnpk <- read_sav("/Users/mymac/Desktop/Data Github/datasnpk2015.sav")
 
@@ -148,7 +148,7 @@ View(totalactors)
 
 ```
 ### Affiates Involved in Conflict and Violance in Indonesia 2014 
-```r{}
+```r
 
 library(treemap)
 library(treemapify)
@@ -180,7 +180,7 @@ The interpretation tree map is very simple, we can now make a conclusion, having
 ## Data Death Toll Social Conflict Indonesia in 2014 (REVISION OR OPTIONAL)
 ### Read Data Base
 
-```r{}
+```r
 data base did manipulation in sub Affiates Involved in Conflict and Violance in Indonesia 2014 
 
 library(dplyr)
@@ -244,6 +244,12 @@ library(readxl)
 totalmonthdeath <- read_excel("totalmonthdeath.xlsx") # data set from datasnpnk2014
 print(totalmonthdeath)
 
+totalmonthdeath$Month <- factor(totalmonthdeath$Month, 
+                                levels = c("January", "February", "March",
+                                           "April", "May", "June", "July", 
+                                           "August", "September", "October", 
+                                           "November", "December")) # for continous x
+
  Month     Total
    <fct>     <dbl>
  1 January     226
@@ -260,9 +266,27 @@ print(totalmonthdeath)
 12 December    205
 
 ```
+### Total Death Toll Social Conflict Indonesia in 2014 Per Month
+```r
+library(ggplot2)
+library(dplyr)
 
+totalmonthdeath %>%
+  tail(12) %>%
+  ggplot(aes(x = Month, y = Total, group = 1)) +
+  geom_line(aes(x = Month, y = Total), color = "black", size = 0.1) +
+  geom_point(shape = 20, color = "darkblue", size = 3) +
+  theme_bw() +
+  geom_smooth(method = "loess", span = 1, se = FALSE) +
+  labs(title = "Total Death Toll Social Conflict Indonesia in 2014 Per Month",
+       subtitle = "Source: Government of Indonesia & The World Bank", 
+       y = "Total",
+       x = "Month") +
+  scale_y_continuous(breaks = seq(min(totalmonthdeath$Total),max(totalmonthdeath$Total),
+                                  by = 10)) +
+  theme(plot.title = element_text(face = "bold"))
 
-
+```
 
 ## Death Toll in Each Province
 ### Read Data Base
@@ -274,7 +298,6 @@ View(deatheachprovince)
 library(knitr)
 deatheachprovincemarkdown <-kable(deatheachprovince, format = "markdown")
 print(deatheachprovincemarkdown)
-
 
 ```
 
@@ -315,7 +338,7 @@ print(deatheachprovincemarkdown)
 
 ### Result Number of Victims Province in 2014
  
-```r{}
+```r
 
 library(ggplot2)
 library(dplyr)
