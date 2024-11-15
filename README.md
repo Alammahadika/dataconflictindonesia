@@ -219,7 +219,7 @@ print(filtered_dataspnk2024$jenis_kek)
 ```
 ### Result Analysis and Graph for Data Death Toll Social Conflict Indonesia in 2014
 
-```r{}
+```r
 ggplot(filtered_dataspnk2024, aes(tanggal_kejadian, y = kil_total)) +
   geom_line(color = "black") +
   geom_smooth(method = "lm", formula = y~log(x)) +
